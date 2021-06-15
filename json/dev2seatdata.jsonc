@@ -1,0 +1,15 @@
+{
+	"data": {
+		"enterprise_id": "enterprise1",
+		"seat_finger": "xxxxxxxx",
+		"dev_fingers": [{
+				"finger": "xxxxxxxx",
+				"name": "dev1"
+			},
+			{
+				"finger": "xxxxxxxx",
+				"name": "dev2"
+			}
+		]
+	}
+}	

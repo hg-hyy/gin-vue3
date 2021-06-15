@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page</title>
+
+    <script src="/js/bootstrap.min.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="/pic/favicon.ico">
+
+</head>
+
+<body>
+    <div class="container">
+        <table id="table" class="table table-bordered table-hover border-primary mt-5 text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">finger</th>
+                    <th scope="col">name</th>
+                    <th scope="col">选择</th>
+                    <th scope="col">选择</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end" id="barcon">
+            </ul>
+        </nav>
+        <button class="btn btn-info" onclick="test()">aedff</button>
+    </div>
+</body>
+
+<script>
+    var data = {
+        "key": "243d-wed3-edcx-234e",
+        "value": ["{\"finger\": \"34f33rtgvrgb4r\",\"name\": \"zhangsan\",\"token\": \"a35vef3g\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}",
+            "{\"finger\": \"57nttjk7kmytm6\",\"name\": \"lisi\",\"token\": \"wefgvvw3r\"}"
+        ]
+    }
+
+    function test() {
+        var ul = document.getElementById("data")
+        var li = ""
+        var msg1 = {
+            "msg": "hello1111"
+        }
+        var msg2 = "world2222"
+        var msg3 = "world3333"
+        data.value.forEach((value, key) => {
+            var account = JSON.parse(value)
+            li +=
+                `<tr>
+                <th scope="row">${key+1}</th>
+                <td>${account.finger}</td>
+                <td>${account.name}</td>
+                <td><button type="button" class="btn btn-primary" onclick="ck('${msg1}','${msg2}','${msg3}')">delete</button></td> 
+                <td><input class="form-check-input" type="checkbox"  id="seatfinger${key+1}" name="account" data="${account.finger}" value="123" onclick="GetRowNo()"></td> 
+                </tr>`
+        });
+        ul.innerHTML = li
+    }
+
+
+    function ck(...msg) {
+        console.log(...msg)
+    }
+
+    function GetRowNo() {
+
+        var target = window.event.target;
+        if (target.parentNode.tagName.toLowerCase() == "td") {
+            rowIndex = target.parentNode.parentNode.rowIndex;
+            console.log(rowIndex)
+        }
+        showtable("table")
+    }
+
+    function showtable(tableId) {
+        //获取table序号
+        var tab = document.getElementById(tableId);
+        var accounts = document.getElementsByName("account");
+        //获取行数
+        var rows = tab.rows;
+
+        for (account in accounts) {
+            if (accounts[account].checked) {
+                var index = accounts[account].parentNode.parentNode.rowIndex
+                console.log("第" + (index) + "行，第" + (1) + "列的值是:" + rows[index].cells[1].innerText);
+
+            }
+        }
+    }
+    window.onload = function () {
+
+
+
+        let obj1 = {
+            attri1: [6, 6, 0],
+            attri2: 4,
+            attri4: 5
+        }
+        let obj2 = {
+            ...obj1
+        }
+        console.log('obj2: ', obj2)
+        obj2.attri2 = 888
+        obj2.attri1[0] = 7
+
+        console.log('obj1:', obj1)
+        console.log('obj2:', obj2)
+
+
+        var msg1 = {
+            "msg": "hello1111"
+        }
+        var msg2 = {
+            "msg": "hello2222"
+        }
+
+        ck(msg1, msg2)
+
+        let sum = (x, y, z) => {
+            return x + y + z;
+        }
+        let sum1 = (x, y, z) => x + y + z;
+        console.log(sum(1, 2, 3))
+    }
+</script>
+
+</html>

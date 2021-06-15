@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="./pic/favicon.ico">
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/vue.global.js"></script>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* 未访问的链接 */
+        a:link {
+            color: #000;
+            text-decoration: none;
+            border: 1px solid red;
+            background-color: green;
+            font-size: larger;
+        }
+
+        /* 已访问的链接 */
+        a:visited {
+            color: #F00;
+        }
+
+        /* 鼠标在链接上 */
+        a:hover {
+            color: #0F0;
+        }
+
+        /*  点击激活链接*/
+        a:active {
+            color: #00F;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table id="table" class="table table-bordered table-hover border-primary mt-5">
+            <thead class="table-light">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end" id="barcon">
+
+            </ul>
+        </nav>
+        <div id="app">
+            Counter: [[counter]]
+            <p>[[message]]</p>
+            <p :title="title">现在时间</p>
+            <button @click="reverseMessage">反转 Message</button>
+            <button @click="plus">counter++</button>
+            <button @click="xor">开关</button>
+            <hr />
+            <a @mousemove="plus" href="#">home</a>
+            <hr />
+            <ul v-show="flag">
+                <template v-for="(value,key,index) in todos" :key="index">
+                    <li v-if="key=='name'">eeeee</li>
+                    <li v-else>[[key]]--[[value]]</li>
+                </template>
+
+            </ul>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    const vm = {
+        data() {
+            return {
+                message: 'Hello Vue.js!',
+                counter: 0,
+                title: new Date().toLocaleString(),
+                todos: {
+                    "name": "fhh",
+                    "age": 35,
+                    "genter": "femal"
+                },
+                flag: true
+            }
+        },
+        delimiters: ['[[', ']]'], //个人喜欢替换为[[]],
+        methods: {
+            reverseMessage() {
+                this.message = this.message
+                    .split('')
+                    .reverse()
+                    .join('')
+            },
+            plus: function () {
+                this.counter++
+            },
+            xor: function () {
+                this.flag = !this.flag
+            }
+        }
+    }
+
+    Vue.createApp(vm).mount('#app')
+</script>
+
+</html>

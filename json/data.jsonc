@@ -1,0 +1,10 @@
+{
+    "data": {
+        "enterprise_id": "enterprise1",
+        "finger": "xxxx-xxxx-xxxx-xxxx", //#指纹（对于终端是硬件指纹，对于坐席是权限系统分配） 
+        "name": "终端1", //#显示的名称
+        "user": "zhangsan", //#登录的用户名
+        "accountID": "xxxxxxx", //#绑定的账户ID
+        "type": 3 //#1管理员 2坐席 3终端
+    }
+}

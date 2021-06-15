@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Bootstrap">
+    <meta name="generator" content="hyy">
+    <title>授权服务平台</title>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/pt.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="icon" href="/pic/favicon.ico">
+    <link rel="stylesheet" href="/css/bootstrap-icons.css">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .nav-link:hover,
+        .list-group-item:hover {
+            color: rgba(0, 0, 0, .85);
+            background-color: #d3d2f4;
+        }
+
+        #left {
+            height: 912px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12 p-0 m-0">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light  border-bottom border-info">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">授权服务平台</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                </li> -->
+
+                            </ul>
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div id="left" class="col-md-2 border-end border-3 border-info bg-light ">
+                <div class="d-flex align-items-center justify-content-between mt-2 ">
+                    <div id="nav" class="nav flex-column nav-pills mx-5" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <button class="nav-link " id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">
+                            <i class="bi bi-gear"></i>
+                            功能管理
+                        </button>
+                        <button class="nav-link" id="v-pills-role-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-role" type="button" role="tab" aria-controls="v-pills-role"
+                            aria-selected="false">
+                            <i class="bi bi-vector-pen"></i>
+                            角色管理
+                        </button>
+                        <button class="nav-link" id="v-pills-auth-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-auth" type="button" role="tab" aria-controls="v-pills-auth"
+                            aria-selected="false" onclick="get_addauth_list()">
+                            <i class="bi bi-vector-pen"></i>
+                            授权管理
+                        </button>
+                        <button class="nav-link" id="v-pills-account-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-account" type="button" role="tab" aria-controls="v-pills-account"
+                            aria-selected="false" onclick="get_account_list()">
+                            <i class="bi bi-people-fill"></i>
+                            账户管理
+                        </button>
+                        <button class="nav-link" id="v-pills-seat-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-seat" type="button" role="tab" aria-controls="v-pills-seat"
+                            aria-selected="false" onclick="get_seats()">
+                            <i class="bi bi-wrench"></i>
+                            座席分配
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div id="sub" class="col-md-1   d-none">
+                <div class=" tab-content text-center" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <!-- 这里是：功能管理 -->
+                        <button onclick="do_post()">do_post</button>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-role" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <!-- 这里是：角色管理 -->
+
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-auth" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <!-- 这里是：授权管理 -->
+                        <div class="accordion mt-1" id="auth">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <button class="accordion-button  p-2 m-0" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#sqgl" aria-expanded="true"
+                                                aria-controls="sqgl">
+                                                xxx科技公司
+                                            </button>
+                                        </div>
+                                    </div>
+                                </h2>
+                                <div id="sqgl" class="accordion-collapse collapse show" aria-labelledby="managers"
+                                    data-bs-parent="#auth">
+                                    <div class="accordion-body p-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="list-group" id="list-auth-tab" role="tablist">
+                                                    <a class="list-group-item list-group-item-action"
+                                                        id="list-auth-list" data-bs-toggle="list" href="#list-auth"
+                                                        role="tab" aria-controls="auth" onclick="info2account()">
+                                                        <i class="bi bi-person"></i> 管理授权</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-account" role="tabpanel"
+                        aria-labelledby="v-pills-account-tab">
+                        <!-- 这里是：账户管理 -->
+                        <div class="accordion mt-1" id="account">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="managers">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <button class="accordion-button  p-2 m-0" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#zhgl" aria-expanded="true"
+                                                aria-controls="zhgl">
+                                                xxx科技公司
+                                            </button>
+                                        </div>
+                                    </div>
+                                </h2>
+                                <div id="zhgl" class="accordion-collapse collapse show" aria-labelledby="managers"
+                                    data-bs-parent="#account">
+                                    <div class="accordion-body p-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="list-group" id="list-admin-tab" role="tablist">
+                                                    <a class="list-group-item list-group-item-action" id="admin"
+                                                        data-bs-toggle="list" href="#list-admin" role="tab"
+                                                        aria-controls="admin" onclick="get_accounts(this)">
+                                                        <i class="bi bi-person"></i> 管理员</a>
+                                                    <a class="list-group-item list-group-item-action" id="seats"
+                                                        data-bs-toggle="list" href="#list-seat" role="tab"
+                                                        aria-controls="seat" onclick="get_accounts(this)">
+                                                        <i class="bi bi-headset"></i> 座席</a>
+                                                    <a class="list-group-item list-group-item-action" id="devs"
+                                                        data-bs-toggle="list" href="#list-dev" role="tab"
+                                                        aria-controls="dev" onclick="get_accounts(this)">
+                                                        <i class="bi bi-terminal"></i> 终端</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="v-pills-seat" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                        <!-- 这里是：座席分配 -->
+                        <div class="accordion mt-1" id="seat">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button  p-2 m-0" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#seatlist" aria-expanded="true" aria-controls="seatlist">
+                                        xxx科技公司
+                                    </button>
+                                </h2>
+                                <div id="seatlist" class="accordion-collapse collapse show" aria-labelledby="seats"
+                                    data-bs-parent="#seat">
+                                    <div class="accordion-body p-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="list-group" id="list-tab zx" role="tablist">
+                                                    <!--  -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="right" class="col-md-10 bg-light ">
+                <div class="row m-2 p-2 justify-content-md-center" id="show">
+                    <!-- 这里是：正文 -->
+                    <ul class="list-unstyled ps-0">
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                data-bs-toggle="collapse" data-bs-target="#home" aria-expanded="true">
+                                Home
+                            </button>
+                            <div class="collapse" id="home">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded">开始</a></li>
+                                    <li><a href="#" class="link-dark rounded">结束</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="border-top my-3"></li>
+                    </ul>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end" id="barcon">
+            
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- DEV Modal -->
+    <div class="modal fade" id="dev2seat" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="devasign" aria-hidden="false">
+
+        <div class="modal-dialog  modal-dialog-centered  modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="devasign">终端分配</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table id="modaldevslist"
+                        class="table table-bordered border-primary table-responsive table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">序号</th>
+                                <th scope="col">身份ID</th>
+                                <th scope="col">终端名称</th>
+                                <th scope="col">全选
+                                <input class="form-check-input" type="checkbox" id="allcheck" data=""value="">
+                                <label for="allcheck"></label>
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody id="model-devs">
+                            <!-- 可分配终端列表 -->
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end" id="devbarcon">
+            
+                        </ul>
+                    </nav>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="devs2seat()">确定</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- INFO Modal -->
+    <div class="modal fade" id="info2account" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="accountbind" aria-hidden="false">
+
+        <div class="modal-dialog  modal-dialog-centered  modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="accountbind">账户绑定</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <table id="modalinfolist"
+                        class="table table-bordered border-primary table-responsive table-hover text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">序号</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Users</th>
+                                <th scope="col">Finger</th>
+                                <!-- <th scope="col">Token</th> -->
+                                <th scope="col">选择</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="model-info">
+                            <!-- 可分配INFO列表 -->
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-end" id="infobarcon">
+            
+                        </ul>
+                    </nav>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="binding()">确定</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = function () {
+        // console.log(document.body.offsetHeight)
+    }
+</script>
+
+</html>

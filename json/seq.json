@@ -1,0 +1,296 @@
+    [
+        {
+            "tag": "server_version",
+            "value": "Linux-3.10.0-1160.6.1.el7.x86_64-x86_64-with-centos-7.9.2009-Core",
+            "data_type": 2,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "system_time",
+            "value": 1621438055,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "cpu:count",
+            "value": 4,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "cpu:total",
+            "value": 27.6,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "cpu:temperature",
+            "value": -1,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "mem:total",
+            "value": 3680.3515625,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "mem:used",
+            "value": 670.06640625,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "mem:free",
+            "value": 2619.4140625,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "mem:percent",
+            "value": 24.2,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "disk:/:total",
+            "value": 1828.01953125,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "disk:/:used",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "disk:/:free",
+            "value": 1828.01953125,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "disk:/:percent",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "disk:total",
+            "value": 5484.058594703674,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "disk:used",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "disk:free",
+            "value": 5484.05859375,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "disk:percent",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:total_flow_in",
+            "value": 2386.203125,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:total_flow_out",
+            "value": 2389.78125,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:total_bytes_sent",
+            "value": 81367065,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:total_bytes_recv",
+            "value": 89547729,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:lo:bytes_sent",
+            "value": 0.9435806274414062,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:lo:bytes_recv",
+            "value": 0.9435806274414062,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:lo:flow_in",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:lo:flow_out",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:lo:link_stt",
+            "value": 1,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp2s0:bytes_sent",
+            "value": 76.85399627685547,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp2s0:bytes_recv",
+            "value": 84.65034103393555,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp2s0:flow_in",
+            "value": 1711.8046875,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp2s0:flow_out",
+            "value": 1715.8671875,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp2s0:link_stt",
+            "value": 1,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp3s0:bytes_sent",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp3s0:bytes_recv",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp3s0:flow_in",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp3s0:flow_out",
+            "value": 0.0,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:enp3s0:link_stt",
+            "value": 0,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:010200000033:bytes_sent",
+            "value": 0.00971221923828125,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:010200000033:bytes_recv",
+            "value": 0.014636993408203125,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:010200000033:flow_in",
+            "value": 1.875,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:010200000033:flow_out",
+            "value": 1.25,
+            "data_type": 0,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "net:010200000033:link_stt",
+            "value": 1,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438356
+        },
+        {
+            "tag": "sys_state",
+            "value": 1,
+            "data_type": 1,
+            "quality": 192,
+            "timestamp": 1621438360
+        }
+    ]

@@ -1,0 +1,22 @@
+[
+    {
+        "key": "enterprise1.accountID1",
+        "value": {
+            "finger": "xxx",
+            "name": "终端1",
+            "users": "zhangsan",
+            "active_time": 1616941977,
+            "end_time": 1617084030
+        }
+    },
+    {
+        "key": "enterprise1.accountID2",
+        "value": {
+            "finger": "xxx",
+            "name": "终端2",
+            "users": "lisi",
+            "active_time": 1616941977,
+            "end_time": 1617084030
+        }
+    }
+]
